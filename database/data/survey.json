@@ -1,0 +1,609 @@
+{
+  "slug": "kje-vas-obcina-zuli",
+  "title": "Kje pa vas občina žuli?",
+  "description": "V okviru priprave programskih izhodišč za lokalne volitve izvajamo anketo o stanju in potrebah na nivoju občin. Najprej izberi svojo občino na zemljevidu.",
+  "intro": "Vaše mnenje je za nas ključno. Z anketnim vprašalnikom želimo sistematično ugotoviti, katera področja so za občane najpomembnejša, kje so največje težave in katere konkretne ukrepe pričakujete od prihodnje lokalne oblasti. Anketa je popolnoma anonimna. Izpolnjevanje traja približno 5 minut.",
+  "thank_you": "Hvala za sodelovanje! Zbrane odgovore bomo analizirali in jih neposredno uporabili pri oblikovanju konkretnih programskih točk.",
+  "is_active": true,
+  "requires_municipality": true,
+  "questions": [
+    {
+      "type": "section",
+      "label": "O tebi in tvoji občini"
+    },
+    {
+      "key": "q257",
+      "type": "radio",
+      "label": "Koliko časa že živite v občini?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Manj kot 5 let"
+        },
+        {
+          "value": "o2",
+          "label": "5 –10 let"
+        },
+        {
+          "value": "o3",
+          "label": "11 – 30 let"
+        },
+        {
+          "value": "o4",
+          "label": "Več kot 30 let"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q258",
+      "type": "radio",
+      "label": "V katerem delu občine živite?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Jedro"
+        },
+        {
+          "value": "o2",
+          "label": "Primestje"
+        },
+        {
+          "value": "o3",
+          "label": "Podeželje"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q260",
+      "type": "radio",
+      "label": "Ali je občina v kateri živite tudi vaš socio-ekonomski center?",
+      "help_text": "Zanima nas, ali ste v občini kjer prebivate tudi zaposleni/se tam izobražujete ter se udeležujete kulturno-družabnih aktivnosti?",
+      "options": [
+        {
+          "value": "o1",
+          "label": "Da"
+        },
+        {
+          "value": "o2",
+          "label": "Ne"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Zadovoljstvo in razvoj"
+    },
+    {
+      "key": "q259",
+      "type": "scale",
+      "label": "Kako zadovoljni ste z življenjem v občini?",
+      "help_text": "1 = zelo nezadovoljen/na, 5 = zelo zadovoljen/na",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q261",
+      "type": "scale",
+      "label": "Ali menite, da se občina razvija v pravo smer?",
+      "help_text": "1 = se ne strinjam, 5 = se strinjam",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Promet in infrastruktura"
+    },
+    {
+      "key": "q263",
+      "type": "scale",
+      "label": "Kako ocenjujete dostopnost javnega potniškega prometa?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q264",
+      "type": "radio",
+      "label": "Kako pogosto uporabljate javni potniški promet?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Dnevno"
+        },
+        {
+          "value": "o2",
+          "label": "Vsaj enkrat na teden"
+        },
+        {
+          "value": "o3",
+          "label": "Vsaj enkrat na mesec"
+        },
+        {
+          "value": "o4",
+          "label": "Redko (nekajkrat na leto)"
+        },
+        {
+          "value": "o5",
+          "label": "Ga ne uporabljam/v moji občini ga ni."
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q262",
+      "type": "scale",
+      "label": "Kako ocenjujete stanje lokalnih cest?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q265",
+      "type": "checkbox",
+      "label": "Na katerih področjih infrastrukture so po vašem mnenju največje pomanjkljivosti?",
+      "help_text": "Možnih je več odgovorov",
+      "options": [
+        {
+          "value": "o1",
+          "label": "Ceste"
+        },
+        {
+          "value": "o2",
+          "label": "Kolesarske steze"
+        },
+        {
+          "value": "o3",
+          "label": "Javni potniški promet"
+        },
+        {
+          "value": "o4",
+          "label": "Parkirišča"
+        },
+        {
+          "value": "o5",
+          "label": "Komunalna infrastruktura"
+        },
+        {
+          "value": "o6",
+          "label": "Javna razsvetljava"
+        },
+        {
+          "value": "o7",
+          "label": "Internet in telekomunikacijska infrastruktura"
+        },
+        {
+          "value": "drugo",
+          "label": "Drugo"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q266",
+      "type": "scale",
+      "label": "Kako ocenjujete urejenost javnih površin? (Parki, igrišča, druge zelene površine ...)",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Okolje"
+    },
+    {
+      "key": "q267",
+      "type": "scale",
+      "label": "Kako ocenjujete podporo občine zelenim, trajnostnim in ekološkim projektom?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q268",
+      "type": "checkbox",
+      "label": "Kateri okoljski problemi vas najbolj skrbijo?",
+      "help_text": "Možnih je več odgovorov",
+      "options": [
+        {
+          "value": "o1",
+          "label": "Kakovost zraka"
+        },
+        {
+          "value": "o2",
+          "label": "Ravnanje z odpadki"
+        },
+        {
+          "value": "o3",
+          "label": "Onesnaženost voda"
+        },
+        {
+          "value": "o4",
+          "label": "Hrup"
+        },
+        {
+          "value": "o5",
+          "label": "Divja odlagališča"
+        },
+        {
+          "value": "o6",
+          "label": "Pomanjkanje zelenih površin"
+        },
+        {
+          "value": "o7",
+          "label": "Prevelik promet skozi naselje"
+        },
+        {
+          "value": "drugo",
+          "label": "Drugo"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Družbene storitve"
+    },
+    {
+      "key": "q269",
+      "type": "scale",
+      "label": "Kako ocenjujete dostopnost in kakovost primarnih zdravstvenih storitev (osebni zdravnik, zobozdravnik in ginekolog) v občini?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q270",
+      "type": "scale",
+      "label": "Kako ocenjujete dostopnost do vzgojno izobraževalnih ustanov (vrtci in osnovne šole)?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q271",
+      "type": "scale",
+      "label": "Kako ocenjujete dostopnost in kakovost storitev za starejše občane (domovi za starejše, pomoč na domu, dnevno varstveni centri ...)?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q272",
+      "type": "checkbox",
+      "label": "Katerim skupinam mora po vašem mnenju občina nameniti več pozornosti?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Otrokom in mladim"
+        },
+        {
+          "value": "o2",
+          "label": "Starejšim"
+        },
+        {
+          "value": "o3",
+          "label": "Brezposelnim"
+        },
+        {
+          "value": "o4",
+          "label": "Invalidom"
+        },
+        {
+          "value": "o5",
+          "label": "Mladim družinam"
+        },
+        {
+          "value": "o6",
+          "label": "Gospodinjstvom z nizkimi dohodki"
+        },
+        {
+          "value": "drugo",
+          "label": "Drugo"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Gospodarstvo"
+    },
+    {
+      "key": "q273",
+      "type": "scale",
+      "label": "Kako ocenjujete gospodarski razvoj občine?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q275",
+      "type": "radio",
+      "label": "Ali je v občini na voljo dovolj delovnih mest?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Da, delovnih mest je zadosti."
+        },
+        {
+          "value": "o2",
+          "label": "Primanjkuje delovnih mest v nekaterih panogah."
+        },
+        {
+          "value": "o3",
+          "label": "Primanjkuje delovnih mest z visoko dodano vrednostjo."
+        },
+        {
+          "value": "o4",
+          "label": "Obstaja resno pomanjkanje delovnih mest"
+        },
+        {
+          "value": "o5",
+          "label": "Ne vem"
+        },
+        {
+          "value": "drugo",
+          "label": "Drugo"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q276",
+      "type": "checkbox",
+      "label": "Kako lahko občina najbolj podpre gospodarski razvoj?",
+      "help_text": "Možnih je več odgovorov",
+      "options": [
+        {
+          "value": "o1",
+          "label": "Z privabljanjem večjih investitorjev"
+        },
+        {
+          "value": "o2",
+          "label": "Z razvojem trajnostnega turizma"
+        },
+        {
+          "value": "o3",
+          "label": "S podporo samostojnim podjetnikom, obrtnikom ter malim podjetjem"
+        },
+        {
+          "value": "o4",
+          "label": "Z investicijami v digitalno gospodarstvo"
+        },
+        {
+          "value": "o5",
+          "label": "Z investicijami v zeleno energijo ter trajnostni razvoj"
+        },
+        {
+          "value": "o6",
+          "label": "S podporo kmetijstvu ter lokalni pridelavi in predelavi hrane"
+        },
+        {
+          "value": "drugo",
+          "label": "Drugo"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Transparentnost in sodelovanje"
+    },
+    {
+      "key": "q277",
+      "type": "scale",
+      "label": "Kako ocenjujete transparentnost delovanja občine?",
+      "help_text": "1 = zelo slabo, 5 = odlično",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q278",
+      "type": "scale",
+      "label": "Ali menite, da vas lokalna oblast posluša ter razume?",
+      "help_text": "1 = popolnoma ne, 5 = absolutno da",
+      "options": null,
+      "is_required": false,
+      "config": {
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q280",
+      "type": "radio",
+      "label": "Ali sodelujete aktivno v lokalni skupnosti? (V javnih razpravah, razgrnitvah, posvetovanjih ipd.)",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Da, redno"
+        },
+        {
+          "value": "o2",
+          "label": "Da, enkrat ali dvakrat"
+        },
+        {
+          "value": "o3",
+          "label": "Ne, ampak bi me zanimalo"
+        },
+        {
+          "value": "o4",
+          "label": "Ne, me ne zanima"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Tvoji predlogi"
+    },
+    {
+      "key": "q281",
+      "type": "textarea",
+      "label": "Kaj bi spremenili pri načinu komunikacije med občino in občani?",
+      "help_text": null,
+      "options": null,
+      "is_required": false,
+      "config": {
+        "rows": 4,
+        "maxlength": 4096
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q282",
+      "type": "textarea",
+      "label": "Kateri konkretni ukrepi bi po vašem mnenju izboljšali kakovost življenja v vaši občini?",
+      "help_text": null,
+      "options": null,
+      "is_required": false,
+      "config": {
+        "rows": 4,
+        "maxlength": 4096
+      },
+      "placeholder": null
+    },
+    {
+      "key": "q283",
+      "type": "textarea",
+      "label": "Ali nam želite še kaj sporočiti?",
+      "help_text": null,
+      "options": null,
+      "is_required": false,
+      "config": {
+        "rows": 4,
+        "maxlength": 4096
+      },
+      "placeholder": null
+    },
+    {
+      "type": "section",
+      "label": "Sodelovanje"
+    },
+    {
+      "key": "q284",
+      "type": "radio",
+      "label": "Ali bi želeli aktivno sodelovati z nami pri pripravi volilnega programa za vašo občino?",
+      "help_text": null,
+      "options": [
+        {
+          "value": "o1",
+          "label": "Da"
+        },
+        {
+          "value": "o2",
+          "label": "Ne"
+        }
+      ],
+      "is_required": false,
+      "config": null,
+      "placeholder": null
+    },
+    {
+      "key": "q285",
+      "type": "email",
+      "label": "E-mail (če ste na prejšnje vprašanje odgovorili z DA)",
+      "help_text": "Posredujte nam vaš e-mail naslov, da vas lahko vključimo v pripravo volilnega programa v vaši občini. V nasprotnem primeru lahko to polje izpustite. Vaše osebne podatke bomo shranili in obdelali skladno z zakonodajo, ki ureja to področje (GDPR).",
+      "options": null,
+      "is_required": false,
+      "config": null,
+      "placeholder": "ime@primer.si"
+    }
+  ]
+}

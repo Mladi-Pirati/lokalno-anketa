@@ -1,0 +1,948 @@
+{
+  "regions": [
+    {
+      "code": "01",
+      "name": "Pomurska",
+      "slug": "pomurska",
+      "sort": 1,
+      "municipalities": [
+        {
+          "name": "Apače",
+          "slug": "apace"
+        },
+        {
+          "name": "Beltinci",
+          "slug": "beltinci"
+        },
+        {
+          "name": "Cankova",
+          "slug": "cankova"
+        },
+        {
+          "name": "Črenšovci",
+          "slug": "crensovci"
+        },
+        {
+          "name": "Dobrovnik",
+          "slug": "dobrovnik"
+        },
+        {
+          "name": "Gornja Radgona",
+          "slug": "gornja-radgona"
+        },
+        {
+          "name": "Gornji Petrovci",
+          "slug": "gornji-petrovci"
+        },
+        {
+          "name": "Grad",
+          "slug": "grad"
+        },
+        {
+          "name": "Hodoš",
+          "slug": "hodos"
+        },
+        {
+          "name": "Kobilje",
+          "slug": "kobilje"
+        },
+        {
+          "name": "Križevci",
+          "slug": "krizevci"
+        },
+        {
+          "name": "Kuzma",
+          "slug": "kuzma"
+        },
+        {
+          "name": "Lendava",
+          "slug": "lendava"
+        },
+        {
+          "name": "Ljutomer",
+          "slug": "ljutomer"
+        },
+        {
+          "name": "Moravske Toplice",
+          "slug": "moravske-toplice"
+        },
+        {
+          "name": "Murska Sobota",
+          "slug": "murska-sobota"
+        },
+        {
+          "name": "Odranci",
+          "slug": "odranci"
+        },
+        {
+          "name": "Puconci",
+          "slug": "puconci"
+        },
+        {
+          "name": "Radenci",
+          "slug": "radenci"
+        },
+        {
+          "name": "Razkrižje",
+          "slug": "razkrizje"
+        },
+        {
+          "name": "Rogašovci",
+          "slug": "rogasovci"
+        },
+        {
+          "name": "Sveti Jurij ob Ščavnici",
+          "slug": "sveti-jurij-ob-scavnici"
+        },
+        {
+          "name": "Šalovci",
+          "slug": "salovci"
+        },
+        {
+          "name": "Tišina",
+          "slug": "tisina"
+        },
+        {
+          "name": "Turnišče",
+          "slug": "turnisce"
+        },
+        {
+          "name": "Velika Polana",
+          "slug": "velika-polana"
+        },
+        {
+          "name": "Veržej",
+          "slug": "verzej"
+        }
+      ]
+    },
+    {
+      "code": "02",
+      "name": "Podravska",
+      "slug": "podravska",
+      "sort": 2,
+      "municipalities": [
+        {
+          "name": "Benedikt",
+          "slug": "benedikt"
+        },
+        {
+          "name": "Cerkvenjak",
+          "slug": "cerkvenjak"
+        },
+        {
+          "name": "Cirkulane",
+          "slug": "cirkulane"
+        },
+        {
+          "name": "Destrnik",
+          "slug": "destrnik"
+        },
+        {
+          "name": "Dornava",
+          "slug": "dornava"
+        },
+        {
+          "name": "Duplek",
+          "slug": "duplek"
+        },
+        {
+          "name": "Gorišnica",
+          "slug": "gorisnica"
+        },
+        {
+          "name": "Hajdina",
+          "slug": "hajdina"
+        },
+        {
+          "name": "Hoče-Slivnica",
+          "slug": "hoce-slivnica"
+        },
+        {
+          "name": "Juršinci",
+          "slug": "jursinci"
+        },
+        {
+          "name": "Kidričevo",
+          "slug": "kidricevo"
+        },
+        {
+          "name": "Kungota",
+          "slug": "kungota"
+        },
+        {
+          "name": "Lenart",
+          "slug": "lenart"
+        },
+        {
+          "name": "Lovrenc na Pohorju",
+          "slug": "lovrenc-na-pohorju"
+        },
+        {
+          "name": "Majšperk",
+          "slug": "majsperk"
+        },
+        {
+          "name": "Makole",
+          "slug": "makole"
+        },
+        {
+          "name": "Maribor",
+          "slug": "maribor"
+        },
+        {
+          "name": "Markovci",
+          "slug": "markovci"
+        },
+        {
+          "name": "Miklavž na Dravskem polju",
+          "slug": "miklavz-na-dravskem-polju"
+        },
+        {
+          "name": "Oplotnica",
+          "slug": "oplotnica"
+        },
+        {
+          "name": "Ormož",
+          "slug": "ormoz"
+        },
+        {
+          "name": "Pesnica",
+          "slug": "pesnica"
+        },
+        {
+          "name": "Podlehnik",
+          "slug": "podlehnik"
+        },
+        {
+          "name": "Poljčane",
+          "slug": "poljcane"
+        },
+        {
+          "name": "Ptuj",
+          "slug": "ptuj"
+        },
+        {
+          "name": "Rače-Fram",
+          "slug": "race-fram"
+        },
+        {
+          "name": "Ruše",
+          "slug": "ruse"
+        },
+        {
+          "name": "Selnica ob Dravi",
+          "slug": "selnica-ob-dravi"
+        },
+        {
+          "name": "Slovenska Bistrica",
+          "slug": "slovenska-bistrica"
+        },
+        {
+          "name": "Središče ob Dravi",
+          "slug": "sredisce-ob-dravi"
+        },
+        {
+          "name": "Starše",
+          "slug": "starse"
+        },
+        {
+          "name": "Sveta Ana",
+          "slug": "sveta-ana"
+        },
+        {
+          "name": "Sveta Trojica v Slovenskih goricah",
+          "slug": "sveta-trojica-v-slovenskih-goricah"
+        },
+        {
+          "name": "Sveti Andraž v Slovenskih goricah",
+          "slug": "sveti-andraz-v-slovenskih-goricah"
+        },
+        {
+          "name": "Sveti Jurij v Slovenskih goricah",
+          "slug": "sveti-jurij-v-slovenskih-goricah"
+        },
+        {
+          "name": "Sveti Tomaž",
+          "slug": "sveti-tomaz"
+        },
+        {
+          "name": "Šentilj",
+          "slug": "sentilj"
+        },
+        {
+          "name": "Trnovska vas",
+          "slug": "trnovska-vas"
+        },
+        {
+          "name": "Videm",
+          "slug": "videm"
+        },
+        {
+          "name": "Zavrč",
+          "slug": "zavrc"
+        },
+        {
+          "name": "Žetale",
+          "slug": "zetale"
+        }
+      ]
+    },
+    {
+      "code": "03",
+      "name": "Koroška",
+      "slug": "koroska",
+      "sort": 3,
+      "municipalities": [
+        {
+          "name": "Črna na Koroškem",
+          "slug": "crna-na-koroskem"
+        },
+        {
+          "name": "Dravograd",
+          "slug": "dravograd"
+        },
+        {
+          "name": "Mežica",
+          "slug": "mezica"
+        },
+        {
+          "name": "Mislinja",
+          "slug": "mislinja"
+        },
+        {
+          "name": "Muta",
+          "slug": "muta"
+        },
+        {
+          "name": "Podvelka",
+          "slug": "podvelka"
+        },
+        {
+          "name": "Prevalje",
+          "slug": "prevalje"
+        },
+        {
+          "name": "Radlje ob Dravi",
+          "slug": "radlje-ob-dravi"
+        },
+        {
+          "name": "Ravne na Koroškem",
+          "slug": "ravne-na-koroskem"
+        },
+        {
+          "name": "Ribnica na Pohorju",
+          "slug": "ribnica-na-pohorju"
+        },
+        {
+          "name": "Slovenj Gradec",
+          "slug": "slovenj-gradec"
+        },
+        {
+          "name": "Vuzenica",
+          "slug": "vuzenica"
+        }
+      ]
+    },
+    {
+      "code": "04",
+      "name": "Savinjska",
+      "slug": "savinjska",
+      "sort": 4,
+      "municipalities": [
+        {
+          "name": "Braslovče",
+          "slug": "braslovce"
+        },
+        {
+          "name": "Celje",
+          "slug": "celje"
+        },
+        {
+          "name": "Dobje",
+          "slug": "dobje"
+        },
+        {
+          "name": "Dobrna",
+          "slug": "dobrna"
+        },
+        {
+          "name": "Gornji Grad",
+          "slug": "gornji-grad"
+        },
+        {
+          "name": "Kozje",
+          "slug": "kozje"
+        },
+        {
+          "name": "Laško",
+          "slug": "lasko"
+        },
+        {
+          "name": "Ljubno",
+          "slug": "ljubno"
+        },
+        {
+          "name": "Luče",
+          "slug": "luce"
+        },
+        {
+          "name": "Mozirje",
+          "slug": "mozirje"
+        },
+        {
+          "name": "Nazarje",
+          "slug": "nazarje"
+        },
+        {
+          "name": "Podčetrtek",
+          "slug": "podcetrtek"
+        },
+        {
+          "name": "Polzela",
+          "slug": "polzela"
+        },
+        {
+          "name": "Prebold",
+          "slug": "prebold"
+        },
+        {
+          "name": "Rečica ob Savinji",
+          "slug": "recica-ob-savinji"
+        },
+        {
+          "name": "Rogaška Slatina",
+          "slug": "rogaska-slatina"
+        },
+        {
+          "name": "Rogatec",
+          "slug": "rogatec"
+        },
+        {
+          "name": "Slovenske Konjice",
+          "slug": "slovenske-konjice"
+        },
+        {
+          "name": "Solčava",
+          "slug": "solcava"
+        },
+        {
+          "name": "Šentjur",
+          "slug": "sentjur"
+        },
+        {
+          "name": "Šmarje pri Jelšah",
+          "slug": "smarje-pri-jelsah"
+        },
+        {
+          "name": "Šmartno ob Paki",
+          "slug": "smartno-ob-paki"
+        },
+        {
+          "name": "Šoštanj",
+          "slug": "sostanj"
+        },
+        {
+          "name": "Štore",
+          "slug": "store"
+        },
+        {
+          "name": "Tabor",
+          "slug": "tabor"
+        },
+        {
+          "name": "Velenje",
+          "slug": "velenje"
+        },
+        {
+          "name": "Vitanje",
+          "slug": "vitanje"
+        },
+        {
+          "name": "Vojnik",
+          "slug": "vojnik"
+        },
+        {
+          "name": "Vransko",
+          "slug": "vransko"
+        },
+        {
+          "name": "Zreče",
+          "slug": "zrece"
+        },
+        {
+          "name": "Žalec",
+          "slug": "zalec"
+        }
+      ]
+    },
+    {
+      "code": "05",
+      "name": "Zasavska",
+      "slug": "zasavska",
+      "sort": 5,
+      "municipalities": [
+        {
+          "name": "Hrastnik",
+          "slug": "hrastnik"
+        },
+        {
+          "name": "Litija",
+          "slug": "litija"
+        },
+        {
+          "name": "Trbovlje",
+          "slug": "trbovlje"
+        },
+        {
+          "name": "Zagorje ob Savi",
+          "slug": "zagorje-ob-savi"
+        }
+      ]
+    },
+    {
+      "code": "06",
+      "name": "Posavska",
+      "slug": "posavska",
+      "sort": 6,
+      "municipalities": [
+        {
+          "name": "Bistrica ob Sotli",
+          "slug": "bistrica-ob-sotli"
+        },
+        {
+          "name": "Brežice",
+          "slug": "brezice"
+        },
+        {
+          "name": "Kostanjevica na Krki",
+          "slug": "kostanjevica-na-krki"
+        },
+        {
+          "name": "Krško",
+          "slug": "krsko"
+        },
+        {
+          "name": "Radeče",
+          "slug": "radece"
+        },
+        {
+          "name": "Sevnica",
+          "slug": "sevnica"
+        }
+      ]
+    },
+    {
+      "code": "07",
+      "name": "Jugovzhodna Slovenija",
+      "slug": "jugovzhodna-slovenija",
+      "sort": 7,
+      "municipalities": [
+        {
+          "name": "Črnomelj",
+          "slug": "crnomelj"
+        },
+        {
+          "name": "Dolenjske Toplice",
+          "slug": "dolenjske-toplice"
+        },
+        {
+          "name": "Kočevje",
+          "slug": "kocevje"
+        },
+        {
+          "name": "Kostel",
+          "slug": "kostel"
+        },
+        {
+          "name": "Loški Potok",
+          "slug": "loski-potok"
+        },
+        {
+          "name": "Metlika",
+          "slug": "metlika"
+        },
+        {
+          "name": "Mirna",
+          "slug": "mirna"
+        },
+        {
+          "name": "Mirna Peč",
+          "slug": "mirna-pec"
+        },
+        {
+          "name": "Mokronog-Trebelno",
+          "slug": "mokronog-trebelno"
+        },
+        {
+          "name": "Novo mesto",
+          "slug": "novo-mesto"
+        },
+        {
+          "name": "Osilnica",
+          "slug": "osilnica"
+        },
+        {
+          "name": "Ribnica",
+          "slug": "ribnica"
+        },
+        {
+          "name": "Semič",
+          "slug": "semic"
+        },
+        {
+          "name": "Šentjernej",
+          "slug": "sentjernej"
+        },
+        {
+          "name": "Šentrupert",
+          "slug": "sentrupert"
+        },
+        {
+          "name": "Škocjan",
+          "slug": "skocjan"
+        },
+        {
+          "name": "Šmarješke Toplice",
+          "slug": "smarjeske-toplice"
+        },
+        {
+          "name": "Sodražica",
+          "slug": "sodrazica"
+        },
+        {
+          "name": "Straža",
+          "slug": "straza"
+        },
+        {
+          "name": "Trebnje",
+          "slug": "trebnje"
+        },
+        {
+          "name": "Žužemberk",
+          "slug": "zuzemberk"
+        }
+      ]
+    },
+    {
+      "code": "08",
+      "name": "Osrednjeslovenska",
+      "slug": "osrednjeslovenska",
+      "sort": 8,
+      "municipalities": [
+        {
+          "name": "Borovnica",
+          "slug": "borovnica"
+        },
+        {
+          "name": "Brezovica",
+          "slug": "brezovica"
+        },
+        {
+          "name": "Dobrepolje",
+          "slug": "dobrepolje"
+        },
+        {
+          "name": "Dobrova-Polhov Gradec",
+          "slug": "dobrova-polhov-gradec"
+        },
+        {
+          "name": "Dol pri Ljubljani",
+          "slug": "dol-pri-ljubljani"
+        },
+        {
+          "name": "Domžale",
+          "slug": "domzale"
+        },
+        {
+          "name": "Grosuplje",
+          "slug": "grosuplje"
+        },
+        {
+          "name": "Horjul",
+          "slug": "horjul"
+        },
+        {
+          "name": "Ig",
+          "slug": "ig"
+        },
+        {
+          "name": "Ivančna Gorica",
+          "slug": "ivancna-gorica"
+        },
+        {
+          "name": "Kamnik",
+          "slug": "kamnik"
+        },
+        {
+          "name": "Komenda",
+          "slug": "komenda"
+        },
+        {
+          "name": "Ljubljana",
+          "slug": "ljubljana"
+        },
+        {
+          "name": "Logatec",
+          "slug": "logatec"
+        },
+        {
+          "name": "Log-Dragomer",
+          "slug": "log-dragomer"
+        },
+        {
+          "name": "Lukovica",
+          "slug": "lukovica"
+        },
+        {
+          "name": "Medvode",
+          "slug": "medvode"
+        },
+        {
+          "name": "Mengeš",
+          "slug": "menges"
+        },
+        {
+          "name": "Moravče",
+          "slug": "moravce"
+        },
+        {
+          "name": "Škofljica",
+          "slug": "skofljica"
+        },
+        {
+          "name": "Šmartno pri Litiji",
+          "slug": "smartno-pri-litiji"
+        },
+        {
+          "name": "Trzin",
+          "slug": "trzin"
+        },
+        {
+          "name": "Velike Lašče",
+          "slug": "velike-lasce"
+        },
+        {
+          "name": "Vodice",
+          "slug": "vodice"
+        },
+        {
+          "name": "Vrhnika",
+          "slug": "vrhnika"
+        }
+      ]
+    },
+    {
+      "code": "09",
+      "name": "Gorenjska",
+      "slug": "gorenjska",
+      "sort": 9,
+      "municipalities": [
+        {
+          "name": "Bled",
+          "slug": "bled"
+        },
+        {
+          "name": "Bohinj",
+          "slug": "bohinj"
+        },
+        {
+          "name": "Cerklje na Gorenjskem",
+          "slug": "cerklje-na-gorenjskem"
+        },
+        {
+          "name": "Gorenja vas-Poljane",
+          "slug": "gorenja-vas-poljane"
+        },
+        {
+          "name": "Gorje",
+          "slug": "gorje"
+        },
+        {
+          "name": "Jesenice",
+          "slug": "jesenice"
+        },
+        {
+          "name": "Jezersko",
+          "slug": "jezersko"
+        },
+        {
+          "name": "Kranj",
+          "slug": "kranj"
+        },
+        {
+          "name": "Kranjska Gora",
+          "slug": "kranjska-gora"
+        },
+        {
+          "name": "Naklo",
+          "slug": "naklo"
+        },
+        {
+          "name": "Preddvor",
+          "slug": "preddvor"
+        },
+        {
+          "name": "Radovljica",
+          "slug": "radovljica"
+        },
+        {
+          "name": "Šenčur",
+          "slug": "sencur"
+        },
+        {
+          "name": "Škofja Loka",
+          "slug": "skofja-loka"
+        },
+        {
+          "name": "Tržič",
+          "slug": "trzic"
+        },
+        {
+          "name": "Železniki",
+          "slug": "zelezniki"
+        },
+        {
+          "name": "Žiri",
+          "slug": "ziri"
+        },
+        {
+          "name": "Žirovnica",
+          "slug": "zirovnica"
+        }
+      ]
+    },
+    {
+      "code": "10",
+      "name": "Primorsko-notranjska",
+      "slug": "primorsko-notranjska",
+      "sort": 10,
+      "municipalities": [
+        {
+          "name": "Bloke",
+          "slug": "bloke"
+        },
+        {
+          "name": "Cerknica",
+          "slug": "cerknica"
+        },
+        {
+          "name": "Ilirska Bistrica",
+          "slug": "ilirska-bistrica"
+        },
+        {
+          "name": "Loška dolina",
+          "slug": "loska-dolina"
+        },
+        {
+          "name": "Pivka",
+          "slug": "pivka"
+        },
+        {
+          "name": "Postojna",
+          "slug": "postojna"
+        }
+      ]
+    },
+    {
+      "code": "11",
+      "name": "Goriška",
+      "slug": "goriska",
+      "sort": 11,
+      "municipalities": [
+        {
+          "name": "Ajdovščina",
+          "slug": "ajdovscina"
+        },
+        {
+          "name": "Bovec",
+          "slug": "bovec"
+        },
+        {
+          "name": "Brda",
+          "slug": "brda"
+        },
+        {
+          "name": "Cerkno",
+          "slug": "cerkno"
+        },
+        {
+          "name": "Idrija",
+          "slug": "idrija"
+        },
+        {
+          "name": "Kanal",
+          "slug": "kanal"
+        },
+        {
+          "name": "Kobarid",
+          "slug": "kobarid"
+        },
+        {
+          "name": "Miren-Kostanjevica",
+          "slug": "miren-kostanjevica"
+        },
+        {
+          "name": "Nova Gorica",
+          "slug": "nova-gorica"
+        },
+        {
+          "name": "Renče-Vogrsko",
+          "slug": "rence-vogrsko"
+        },
+        {
+          "name": "Šempeter-Vrtojba",
+          "slug": "sempeter-vrtojba"
+        },
+        {
+          "name": "Tolmin",
+          "slug": "tolmin"
+        },
+        {
+          "name": "Vipava",
+          "slug": "vipava"
+        }
+      ]
+    },
+    {
+      "code": "12",
+      "name": "Obalno-kraška",
+      "slug": "obalno-kraska",
+      "sort": 12,
+      "municipalities": [
+        {
+          "name": "Ankaran",
+          "slug": "ankaran"
+        },
+        {
+          "name": "Divača",
+          "slug": "divaca"
+        },
+        {
+          "name": "Hrpelje-Kozina",
+          "slug": "hrpelje-kozina"
+        },
+        {
+          "name": "Izola",
+          "slug": "izola"
+        },
+        {
+          "name": "Komen",
+          "slug": "komen"
+        },
+        {
+          "name": "Koper",
+          "slug": "koper"
+        },
+        {
+          "name": "Piran",
+          "slug": "piran"
+        },
+        {
+          "name": "Sežana",
+          "slug": "sezana"
+        }
+      ]
+    }
+  ]
+}

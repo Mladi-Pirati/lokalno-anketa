@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+    --color-ink: #050506;
+    --color-surface: #0d0d10;
+    --color-panel: #141419;
+    --color-panel-2: #1c1c22;
+    --color-line: #2a2a32;
+    --color-muted: #a1a1aa;
+    --color-fg: #f4f4f5;
+    --color-accent: #ff6600;
+    --color-accent-2: #ff8a33;
+    --color-accent-ink: #1a0d00;
+
+    --radius-xl2: 16px;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+    body {
+        background-color: var(--color-ink);
+        color: var(--color-fg);
+        font-family: var(--font-sans);
+        line-height: 1.55;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image: radial-gradient(1100px 560px at 82% -12%, rgba(255, 102, 0, 0.12), transparent 60%);
+    }
+    h1, h2, h3 {
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+    }
+    a {
+        color: var(--color-accent-2);
+        text-decoration: none;
+    }
+}
+
+@layer components {
+    /* buttons */
+    .btn {
+        @apply inline-flex items-center gap-2 rounded-full font-bold px-6 py-3.5 cursor-pointer transition;
+        border: 0;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+    .btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+    .btn-primary { background: var(--color-accent); color: var(--color-accent-ink); }
+    .btn-primary:hover { background: var(--color-accent-2); }
+    .btn-ghost { background: transparent; color: var(--color-fg); border: 1px solid var(--color-line); }
+    .btn-ghost:hover { border-color: var(--color-accent); }
+
+    .eyebrow { @apply uppercase font-bold text-sm; letter-spacing: 0.18em; color: var(--color-accent); }
+    .panel { background: var(--color-panel); border: 1px solid var(--color-line); border-radius: var(--radius-xl2); }
+
+    .field {
+        @apply w-full rounded-xl px-4 py-3 text-base;
+        background: var(--color-surface);
+        border: 1px solid var(--color-line);
+        color: var(--color-fg);
+    }
+    .field:focus { outline: none; border-color: var(--color-accent); }
+    textarea.field { resize: vertical; min-height: 110px; }
+
+    /* choice options */
+    .opt {
+        @apply flex items-start gap-3 rounded-xl px-4 py-3 mb-2 cursor-pointer transition;
+        background: var(--color-panel-2);
+        border: 1px solid var(--color-line);
+    }
+    .opt:hover { border-color: var(--color-accent); }
+    .opt.checked { border-color: var(--color-accent); background: #241a10; }
+    .opt input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--color-accent); }
+
+    .scale { @apply flex flex-wrap gap-2; }
+    .scale label {
+        @apply flex-1 text-center rounded-xl py-3 cursor-pointer font-bold transition;
+        min-width: 56px;
+        background: var(--color-panel-2);
+        border: 1px solid var(--color-line);
+    }
+    .scale label:hover { border-color: var(--color-accent); }
+    .scale label.checked { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+    .scale input { position: absolute; opacity: 0; pointer-events: none; }
+
+    .chip {
+        @apply inline-flex items-center rounded-full px-3.5 py-2 text-sm font-semibold cursor-pointer transition;
+        background: var(--color-panel-2);
+        border: 1px solid var(--color-line);
+        color: var(--color-fg);
+    }
+    .chip:hover { border-color: var(--color-accent); background: #241a10; color: var(--color-fg); text-decoration: none; }
+    .chip.sel { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+
+    /* map breaks out of the text column, centered, with a sensible cap */
+    .map-wide {
+        width: min(100vw - 40px, 1000px);
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* ---- map ---- */
+    .map-stage {
+        position: relative;
+        border-radius: 18px;
+        padding: 6px 14px 10px;
+        background:
+            radial-gradient(110% 120% at 50% -20%, rgba(255, 102, 0, 0.07), transparent 55%),
+            linear-gradient(180deg, #0f0f13 0%, #0a0a0d 75%, #08080a 100%);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 40px 90px -45px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+    .map-stage svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: hidden;
+        touch-action: manipulation;
+    }
+
+    /* floating name label on hover */
+    .map-tip {
+        position: absolute;
+        z-index: 5;
+        pointer-events: none;
+        white-space: nowrap;
+        background: var(--color-panel-2);
+        color: var(--color-fg);
+        border: 1px solid var(--color-line);
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        transform: translate(-50%, calc(-100% - 12px));
+        opacity: 0;
+        transition: opacity 0.1s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    .map-tip.show { opacity: 1; }
+    .map-stage svg .muni {
+        fill: var(--rc, #23232c);            /* per-region colour set from JS */
+        stroke: rgba(6, 6, 8, 0.85);
+        stroke-width: 0.6;
+        transition: fill 0.12s ease, filter 0.12s ease;
+    }
+    .map-stage svg g.region { transition: opacity 0.2s ease, filter 0.12s ease; }
+
+    /* region-mode: whole region highlights on hover, keeping its colour identity */
+    .map-stage[data-mode="regions"] svg g.region { cursor: pointer; }
+    .map-stage[data-mode="regions"] svg g.region:hover { filter: brightness(1.35) saturate(1.1); }
+
+    /* muni-mode: only the active region stays lit and interactive */
+    .map-stage[data-mode="munis"] svg g.region { opacity: 0.12; pointer-events: none; filter: grayscale(0.5); }
+    .map-stage[data-mode="munis"] svg g.region.active { opacity: 1; pointer-events: auto; filter: none; }
+    .map-stage[data-mode="munis"] svg g.region.active .muni { cursor: pointer; }
+    /* subtle brighten on hover (not a full fill) so nothing looks pre-selected */
+    .map-stage[data-mode="munis"] svg g.region.active .muni:hover { filter: brightness(1.45); }
+
+    .region-label {
+        fill: #e9e9ee;
+        font-size: 16px;
+        font-weight: 700;
+        text-anchor: middle;
+        paint-order: stroke;
+        stroke: #050506;
+        stroke-width: 3px;
+        pointer-events: none;
+        user-select: none;
+    }
+    .map-stage[data-mode="munis"] .region-label { display: none; }
+
+    .back-btn {
+        @apply inline-flex items-center gap-1.5 text-sm font-semibold cursor-pointer;
+        color: var(--color-muted);
+        background: none;
+        border: 0;
+    }
+    .back-btn:hover { color: var(--color-fg); }
+
+    .bar { height: 10px; border-radius: 6px; overflow: hidden; background: var(--color-panel-2); }
+    .bar > i { display: block; height: 100%; background: var(--color-accent); }
+
+    .data-table { @apply w-full text-sm; border-collapse: collapse; }
+    .data-table th, .data-table td { @apply text-left px-3 py-2.5; border-bottom: 1px solid var(--color-line); }
+    .data-table th { @apply uppercase text-xs; color: var(--color-muted); letter-spacing: 0.06em; }
+}
