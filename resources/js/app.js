@@ -26,3 +26,21 @@ document.addEventListener('change', function (e) {
         });
     }
 });
+
+
+document.addEventListener('change', (e) => {
+    const el = e.target.closest('[data-other-toggle]');
+    if (!el) return;
+
+    if (el.type === 'radio') {
+        // hide every "other" input tied to this radio group, then show only the active one
+        document.querySelectorAll(`input[type="radio"][name="${el.name}"][data-other-toggle]`)
+            .forEach(radio => {
+                const target = document.getElementById(radio.dataset.otherToggle);
+                if (target) target.style.display = radio.checked ? '' : 'none';
+            });
+    } else {
+        const target = document.getElementById(el.dataset.otherToggle);
+        if (target) target.style.display = el.checked ? '' : 'none';
+    }
+});

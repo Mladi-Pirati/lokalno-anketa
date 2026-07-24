@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\RateLimiter;
 use Throwable;
 
 class SurveyController extends Controller
@@ -58,6 +59,12 @@ class SurveyController extends Controller
      */
     public function store(Request $request, Municipality $municipality)
     {
+        $key = 'public-form-submit:' . $request->ip();
+
+        if (RateLimiter::tooManyAttempts($key, 10)) {
+            abort(429, 'Preveč poskusov. Poskusite znova čez ' . RateLimiter::availableIn($key) . ' sekund.');
+        }
+        
         $survey = Survey::active();
         abort_if(!$survey, 404);
         $survey->loadMissing('questions');
@@ -90,10 +97,30 @@ class SurveyController extends Controller
                 if (!array_key_exists($field, $validated)) {
                     continue;
                 }
+
                 $value = $validated[$field];
+                $otherField = $field . '_other';
+
                 if ($q->type === 'boolean') {
-                    $value = (bool)$value;
+                    $value = (bool) $value;
                 }
+
+                if ($q->type === 'radio' && $value === 'drugo') {
+                    $value = [
+                        'option' => 'drugo',
+                        'text' => $validated[$otherField] ?? null,
+                    ];
+                }
+
+                if ($q->type === 'checkbox' && is_array($value) && in_array('drugo', $value)) {
+                    $value = array_map(
+                        fn($v) => $v === 'drugo'
+                            ? ['option' => 'drugo', 'text' => $validated[$otherField] ?? null]
+                            : $v,
+                        $value
+                    );
+                }
+
                 if ($value === null || $value === '' || $value === []) {
                     continue;
                 }
@@ -105,9 +132,10 @@ class SurveyController extends Controller
                     'value' => $value,
                 ]);
             }
-
             return $response;
         });
+
+        RateLimiter::hit($key, 60);
 
         return redirect()->route('survey.thanks', $response->token);
     }

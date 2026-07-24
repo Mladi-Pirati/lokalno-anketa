@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('code')->nullable()->index(); // GURS SR_ID / statistical region code
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('svg_path')->nullable();  // optional aggregated region outline
+            $table->longText('svg_path')->nullable();  // optional aggregated region outline
             $table->json('meta')->nullable();
             $table->unsignedInteger('sort')->default(0);
             $table->timestamps();

@@ -30,20 +30,36 @@
         @case('radio')
             @foreach($question->options ?? [] as $o)
                 <label class="opt {{ $val==$o['value'] ? 'checked' : '' }}">
-                    <input type="radio" name="{{ $name }}" value="{{ $o['value'] }}" @checked($val==$o['value'])>
+                    <input type="radio" name="{{ $name }}" value="{{ $o['value'] }}"
+                        @checked($val==$o['value'])
+                        @if($o['value']==='drugo') data-other-toggle="{{ $name }}_other" @endif>
                     <span>{{ $o['label'] }}</span>
                 </label>
             @endforeach
+            @if(collect($question->options ?? [])->contains('value', 'drugo'))
+                <input type="text" name="{{ $name }}_other" id="{{ $name }}_other" class="field mt-2"
+                    placeholder="Prosimo, navedite..." value="{{ old($name.'_other') }}"
+                    style="{{ $val === 'drugo' ? '' : 'display:none' }}">
+                @error($name.'_other')<div class="text-sm mt-1.5" style="color:#ff6b6b">{{ $message }}</div>@enderror
+            @endif
             @break
 
         @case('checkbox')
             @php $vals = is_array($val) ? $val : []; @endphp
             @foreach($question->options ?? [] as $o)
                 <label class="opt {{ in_array($o['value'],$vals) ? 'checked' : '' }}">
-                    <input type="checkbox" name="{{ $name }}[]" value="{{ $o['value'] }}" @checked(in_array($o['value'],$vals))>
+                    <input type="checkbox" name="{{ $name }}[]" value="{{ $o['value'] }}"
+                        @checked(in_array($o['value'],$vals))
+                        @if($o['value']==='drugo') data-other-toggle="{{ $name }}_other" @endif>
                     <span>{{ $o['label'] }}</span>
                 </label>
             @endforeach
+            @if(collect($question->options ?? [])->contains('value', 'drugo'))
+                <input type="text" name="{{ $name }}_other" id="{{ $name }}_other" class="field mt-2"
+                    placeholder="Prosimo, navedite..." value="{{ old($name.'_other') }}"
+                    style="{{ in_array('drugo',$vals) ? '' : 'display:none' }}">
+                @error($name.'_other')<div class="text-sm mt-1.5" style="color:#ff6b6b">{{ $message }}</div>@enderror
+            @endif
             @break
 
         @case('scale')

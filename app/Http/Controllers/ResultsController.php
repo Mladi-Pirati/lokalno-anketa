@@ -78,12 +78,27 @@ class ResultsController extends Controller
             $counts = [];
             foreach ($rows as $raw) {
                 $val = json_decode($raw, true);
+
+                // Radio/select "Drugo" answers are stored as a single assoc array, not wrapped in a list
+                if (is_array($val) && array_key_exists('option', $val) && $val['option'] === 'drugo') {
+                    $text = $val['text'] ?? null;
+                    $label = 'Drugo: ' . ($text !== null && $text !== '' ? $text : '(brez besedila)');
+                    $counts[$label] = ($counts[$label] ?? 0) + 1;
+                    continue;
+                }
+
                 foreach ((array) $val as $v) {
-                    $key = is_bool($v) ? ($v ? 'Da' : 'Ne') : (string) $v;
-                    $label = $labels[$key] ?? $key;
+                    if (is_array($v) && ($v['option'] ?? null) === 'drugo') {
+                        $text = $v['text'] ?? null;
+                        $label = 'Drugo: ' . ($text !== null && $text !== '' ? $text : '(brez besedila)');
+                    } else {
+                        $key = is_bool($v) ? ($v ? 'Da' : 'Ne') : (string) $v;
+                        $label = $labels[$key] ?? $key;
+                    }
                     $counts[$label] = ($counts[$label] ?? 0) + 1;
                 }
             }
+
             arsort($counts);
             $aggregates[$q->id] = ['question' => $q, 'counts' => $counts];
         }

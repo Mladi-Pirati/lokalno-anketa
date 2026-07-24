@@ -86,7 +86,30 @@ class Question extends Model
                 $rules[] = 'max:' . ($config['maxlength'] ?? 5000);
         }
 
-        return [$this->fieldName() => $rules];
+        $out = [$this->fieldName() => $rules];
+
+        // "Drugo" free-text companion field
+        $hasOther = collect($this->options ?? [])->contains('value', 'drugo');
+        if ($hasOther) {
+            $otherField = $this->fieldName() . '_other';
+
+            if ($this->type === 'checkbox') {
+                $out[$otherField] = [
+                    'nullable', 'string', 'max:255',
+                    function ($attribute, $value, $fail) {
+                        $selected = request()->input($this->fieldName(), []);
+                        if (is_array($selected) && in_array('drugo', $selected) && blank($value)) {
+                            $fail('Prosimo, navedite vaš odgovor.');
+                        }
+                    },
+                ];
+            } else {
+                // radio / select
+                $out[$otherField] = 'required_if:' . $this->fieldName() . ',drugo|nullable|string|max:255';
+            }
+        }
+
+        return $out;
     }
 
     public function fieldName(): string

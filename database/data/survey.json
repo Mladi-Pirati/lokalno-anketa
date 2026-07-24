@@ -34,7 +34,7 @@
           "label": "Več kot 30 let"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -57,7 +57,7 @@
           "label": "Podeželje"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -76,7 +76,7 @@
           "label": "Ne"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -90,7 +90,7 @@
       "label": "Kako zadovoljni ste z življenjem v občini?",
       "help_text": "1 = zelo nezadovoljen/na, 5 = zelo zadovoljen/na",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -104,7 +104,7 @@
       "label": "Ali menite, da se občina razvija v pravo smer?",
       "help_text": "1 = se ne strinjam, 5 = se strinjam",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -122,7 +122,7 @@
       "label": "Kako ocenjujete dostopnost javnega potniškega prometa?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -157,7 +157,7 @@
           "label": "Ga ne uporabljam/v moji občini ga ni."
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -167,7 +167,7 @@
       "label": "Kako ocenjujete stanje lokalnih cest?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -214,7 +214,7 @@
           "label": "Drugo"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -224,7 +224,7 @@
       "label": "Kako ocenjujete urejenost javnih površin? (Parki, igrišča, druge zelene površine ...)",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -242,7 +242,7 @@
       "label": "Kako ocenjujete podporo občine zelenim, trajnostnim in ekološkim projektom?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -289,7 +289,7 @@
           "label": "Drugo"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -303,7 +303,7 @@
       "label": "Kako ocenjujete dostopnost in kakovost primarnih zdravstvenih storitev (osebni zdravnik, zobozdravnik in ginekolog) v občini?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -317,7 +317,7 @@
       "label": "Kako ocenjujete dostopnost do vzgojno izobraževalnih ustanov (vrtci in osnovne šole)?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -331,7 +331,7 @@
       "label": "Kako ocenjujete dostopnost in kakovost storitev za starejše občane (domovi za starejše, pomoč na domu, dnevno varstveni centri ...)?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -374,7 +374,7 @@
           "label": "Drugo"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -388,7 +388,7 @@
       "label": "Kako ocenjujete gospodarski razvoj občine?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -427,7 +427,7 @@
           "label": "Drugo"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -466,7 +466,7 @@
           "label": "Drugo"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },
@@ -480,7 +480,7 @@
       "label": "Kako ocenjujete transparentnost delovanja občine?",
       "help_text": "1 = zelo slabo, 5 = odlično",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -494,7 +494,7 @@
       "label": "Ali menite, da vas lokalna oblast posluša ter razume?",
       "help_text": "1 = popolnoma ne, 5 = absolutno da",
       "options": null,
-      "is_required": false,
+      "is_required": true,
       "config": {
         "min": 1,
         "max": 5,
@@ -525,7 +525,7 @@
           "label": "Ne, me ne zanima"
         }
       ],
-      "is_required": false,
+      "is_required": true,
       "config": null,
       "placeholder": null
     },

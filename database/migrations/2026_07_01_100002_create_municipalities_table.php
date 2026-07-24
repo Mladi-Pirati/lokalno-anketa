@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('code')->nullable()->index(); // GURS OB_ID
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('svg_path')->nullable();  // projected + simplified SVG path "d"
+            $table->longText('svg_path')->nullable();  // projected + simplified SVG path "d"
             $table->json('centroid')->nullable();  // [x, y] in SVG space, for labels
             $table->json('meta')->nullable();
             $table->timestamps();

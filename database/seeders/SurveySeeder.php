@@ -27,6 +27,9 @@ class SurveySeeder extends Seeder
         );
 
         foreach ($data['questions'] as $i => $q) {
+            if($q['type'] == 'section'){
+               continue;
+            }
             Question::updateOrCreate(
                 ['survey_id' => $survey->id, 'key' => $q['key']],
                 [
