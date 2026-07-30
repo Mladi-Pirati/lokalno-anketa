@@ -65,6 +65,15 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Extract Nginx Docker metadata
+        id: nginx-meta
+        uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch,prefix=nginx-
+            type=ref,event=tag,prefix=nginx-
+
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
@@ -84,8 +93,8 @@ jobs:
         with:
           context: ./docker/nginx
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:nginx-${{ github.ref_name }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.nginx-meta.outputs.tags }}
+          labels: ${{ steps.nginx-meta.outputs.labels }}
           cache-from: type=gha,scope=nginx
           cache-to: type=gha,mode=max,scope=nginx
 
@@ -107,6 +116,6 @@ jobs:
       - name: Sign the published Nginx Docker image
         if: ${{ github.event_name != 'pull_request' }}
         env:
-          TAGS: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:nginx-${{ github.ref_name }}
+          TAGS: ${{ steps.nginx-meta.outputs.tags }}
           DIGEST: ${{ steps.build-and-push-nginx.outputs.digest }}
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
