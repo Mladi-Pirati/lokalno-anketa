@@ -1,5 +1,6 @@
 services:
   app:
+    pull_policy: always
     image: ghcr.io/mladi-pirati/lokalno-anketa:main
     container_name: laravel_app
     restart: unless-stopped
