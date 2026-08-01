@@ -32,5 +32,17 @@ php artisan storage:link || true
 echo "Running mapping"
 php -d memory_limit=-1 artisan map:import ./data/OB.geojson --regions=./data/SR.geojson
 
-echo "Starting php-fpm..."
-exec php-fpm
+case "${APP_SERVER:-fpm}" in
+  http)
+    echo "Starting Laravel HTTP server on port ${APP_HTTP_PORT:-8080}..."
+    exec php artisan serve --host=0.0.0.0 --port="${APP_HTTP_PORT:-8080}"
+    ;;
+  fpm)
+    echo "Starting php-fpm..."
+    exec php-fpm
+    ;;
+  *)
+    echo "Unknown APP_SERVER value: ${APP_SERVER} (expected 'http' or 'fpm')" >&2
+    exit 1
+    ;;
+esac
