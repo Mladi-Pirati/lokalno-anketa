@@ -24,7 +24,8 @@ class ImportMap extends Command
         {obcine : Path to the municipalities GeoJSON (OB.geojson)}
         {--regions= : Path to the statistical regions GeoJSON (SR.geojson)}
         {--width=1000 : Output SVG width in px (height derived from aspect ratio)}
-        {--precision=1 : Decimal places to keep in path coordinates}';
+        {--precision=1 : Decimal places to keep in path coordinates}
+        {--simplify=0.2 : Douglas-Peucker tolerance in projected SVG pixels}';
 
     protected $description = 'Import GURS municipality/region geometry into DB and public/data/slovenia_map.json';
 
@@ -66,7 +67,9 @@ class ImportMap extends Command
                 }
                 $slug = $region?->slug ?? Str::slug($name);
                 $regionPolys[$slug] = $this->projectedRings($f['geometry']);
-                $mapRegions[] = ['slug' => $slug, 'name' => $region?->name ?? $name, 'path' => $path];
+                // The browser draws regions by grouping municipality paths, so
+                // including the full region outline here only duplicates data.
+                $mapRegions[] = ['slug' => $slug, 'name' => $region?->name ?? $name];
             }
         }
 
@@ -120,13 +123,14 @@ class ImportMap extends Command
         ];
         $dir = public_path('data');
         if (! is_dir($dir)) mkdir($dir, 0775, true);
-        file_put_contents($dir . '/slovenia_map.json', json_encode($out, JSON_UNESCAPED_UNICODE));
+        $bytes = file_put_contents($dir . '/slovenia_map.json', json_encode($out, JSON_UNESCAPED_UNICODE));
 
         $this->info("Matched {$matched} municipalities to DB.");
         if ($unmatched) {
             $this->warn('Unmatched (' . count($unmatched) . '): ' . implode(', ', array_slice($unmatched, 0, 20)) . (count($unmatched) > 20 ? ' …' : ''));
         }
-        $this->info('Wrote public/data/slovenia_map.json (' . count($mapMunis) . ' municipalities, ' . count($mapRegions) . ' regions).');
+        $size = $bytes === false ? 'unknown size' : number_format($bytes / 1024, 1) . ' KiB';
+        $this->info('Wrote public/data/slovenia_map.json (' . count($mapMunis) . ' municipalities, ' . count($mapRegions) . " regions, {$size}).");
 
         CacheEnum::flush();
 
@@ -239,16 +243,104 @@ class ImportMap extends Command
         $d = '';
         foreach ($polys as $poly) {
             foreach ($poly as $ring) {
-                $first = true;
+                $points = [];
                 foreach ($ring as $pt) {
-                    [$x, $y] = $this->projectPoint((float) $pt[0], (float) $pt[1]);
-                    $d .= ($first ? 'M' : 'L') . $x . ' ' . $y . ' ';
-                    $first = false;
+                    $point = $this->projectPoint((float) $pt[0], (float) $pt[1]);
+                    if (! $points || $point !== $points[array_key_last($points)]) {
+                        $points[] = $point;
+                    }
+                }
+
+                if (count($points) < 3) {
+                    continue;
+                }
+
+                $simplified = $this->simplifyPath($points, max(0.0, (float) $this->option('simplify')));
+                if (count($simplified) < 3) {
+                    $simplified = $points;
+                }
+
+                foreach ($simplified as $index => [$x, $y]) {
+                    $d .= ($index === 0 ? 'M' : 'L') . $x . ' ' . $y . ' ';
                 }
                 $d .= 'Z ';
             }
         }
         return trim($d);
+    }
+
+    /**
+     * Simplify an SVG ring after projection. GeoJSON rings repeat their first
+     * point at the end; keeping that duplicate while simplifying lets the
+     * algorithm preserve both arcs before SVG's Z command closes the result.
+     */
+    private function simplifyPath(array $points, float $tolerance): array
+    {
+        if ($tolerance <= 0 || count($points) <= 3) {
+            return $this->withoutClosingDuplicate($points);
+        }
+
+        $simplified = $this->douglasPeucker($points, $tolerance);
+
+        return $this->withoutClosingDuplicate($simplified);
+    }
+
+    private function withoutClosingDuplicate(array $points): array
+    {
+        if (count($points) > 1 && $points[0] === $points[array_key_last($points)]) {
+            array_pop($points);
+        }
+
+        return $points;
+    }
+
+    private function douglasPeucker(array $points, float $tolerance): array
+    {
+        $last = count($points) - 1;
+        if ($last < 2) {
+            return $points;
+        }
+
+        $start = $points[0];
+        $end = $points[$last];
+        $maxDistance = -1.0;
+        $splitAt = 0;
+
+        for ($i = 1; $i < $last; $i++) {
+            $distance = $this->pointToSegmentDistance($points[$i], $start, $end);
+            if ($distance > $maxDistance) {
+                $maxDistance = $distance;
+                $splitAt = $i;
+            }
+        }
+
+        if ($maxDistance <= $tolerance) {
+            return [$start, $end];
+        }
+
+        $left = $this->douglasPeucker(array_slice($points, 0, $splitAt + 1), $tolerance);
+        $right = $this->douglasPeucker(array_slice($points, $splitAt), $tolerance);
+
+        array_pop($left);
+        return array_merge($left, $right);
+    }
+
+    private function pointToSegmentDistance(array $point, array $start, array $end): float
+    {
+        $dx = $end[0] - $start[0];
+        $dy = $end[1] - $start[1];
+        $lengthSquared = $dx * $dx + $dy * $dy;
+
+        if ($lengthSquared == 0.0) {
+            return hypot($point[0] - $start[0], $point[1] - $start[1]);
+        }
+
+        $t = (($point[0] - $start[0]) * $dx + ($point[1] - $start[1]) * $dy) / $lengthSquared;
+        $t = max(0.0, min(1.0, $t));
+        $nearestX = $start[0] + $t * $dx;
+        $nearestY = $start[1] + $t * $dy;
+
+        return hypot($point[0] - $nearestX, $point[1] - $nearestY);
     }
 
     /** Projected outer rings for point-in-polygon tests. */

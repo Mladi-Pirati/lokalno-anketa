@@ -23,9 +23,9 @@
             </div>
 
             <div id="map-stage" class="map-stage" data-mode="regions"
-                 data-has-geometry="{{ $hasGeometry ? '1' : '0' }}">
+                data-has-geometry="{{ $hasGeometry ? '1' : '0' }}">
                 <div id="map-empty" class="p-10 text-center text-sm text-[color:var(--color-muted)]">
-                    Zemljevid ni na voljo.
+                    Zemljevid se nalaga …
                 </div>
                 <div id="map-svg" class="hidden"></div>
             </div>

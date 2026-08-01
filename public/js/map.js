@@ -38,10 +38,16 @@
   var state = { map: null, regions: {}, groups: {}, svg: null, fullVB: null, activeRegion: null };
 
   if (stage.getAttribute('data-has-geometry') === '1') {
+    if (empty) empty.textContent = 'Zemljevid se nalaga …';
     fetch('/data/slovenia_map.json', { credentials: 'same-origin' })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(render)
-      .catch(function () { if (empty) empty.textContent = 'Zemljevida ni bilo mogoče naložiti.'; });
+      .catch(function (error) {
+        console.error('Map failed to load', error);
+        if (empty) empty.textContent = 'Zemljevida ni bilo mogoče naložiti.';
+      });
+  } else if (empty) {
+    empty.textContent = 'Zemljevid ni na voljo.';
   }
 
   function growBBox(bb, d) {
